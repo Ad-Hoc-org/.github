@@ -31,11 +31,14 @@
     <PackageReleaseNotesFile>$(RepoRoot)\RELEASENOTES.md</PackageReleaseNotesFile>
   </PropertyGroup>
 
+  <!-- Enable sourcelink https://docs.microsoft.com/dotnet/standard/library-guidance/sourcelink -->
   <PropertyGroup Label="SourceLinkProperties">
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <ContinuousIntegrationBuild Condition="'$(Deterministic)'=='true'">true</ContinuousIntegrationBuild>
   </PropertyGroup>
+  <ItemGroup Label="SourceLinkProperties">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+  </ItemGroup>
 
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
